@@ -4,6 +4,7 @@
     <menuitem
             id="Hospital_Menu"
             name="Hospital"
+            web_icon = "hospital,static/description/1.png"
             sequence="0"
     />
 

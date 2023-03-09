@@ -14,3 +14,4 @@ class Patient(models.Model):
    #Always make sure tuple are seprated properly.
    # will have to follow the convention
    gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
+   room = fields.Selection([("room_a","A Class"), ("room_b", "B Class")],string = "Room")
