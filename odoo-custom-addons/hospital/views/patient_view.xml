@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding = "utf-8"?>
 
 <odoo>
+
+    <record id="hostpital_patient_treeUI" model="ir.ui.view">
+        <field name="name">hospital.patient.Tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="room"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="hostpital_patient_searchviewUI" model="ir.ui.view">
+        <field name="name">hospital patient searchview</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+                <search>
+                <field name="name"  filter_domain="['|',('name', 'ilike', self),('ref','ilike', self)]"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="room"/>
+                    <field name="active"/>
+                <filter name="Female_filter" string="Female" domain=" [('gender','=','female')]" />
+            <separator/>
+                <filter name="Female_kids" string="kids" domain="[('age','&lt;=',5)]" />
+                     <separator/>
+                     <filter name="Filter_Archived" string="Archived" domain="[('active','=',False)]" />
+
+                    <group expand="0" string = "Group By">
+                         <filter name="Room_Class" string="Room Class" context="{'group_by' : 'room'}" />
+                    </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hostpital_patient_formUI" model="ir.ui.view">
+        <field name="name">hospital patient form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="room"/>
+                        </group>
+                        <group>
+                        <field name="active" invisible ='1'/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="action_hospital_patient" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="type">ir.actions.act_window</field>
