@@ -23,3 +23,7 @@ class Patient(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender", tracking=True)
     room = fields.Selection([("room_a", "A Class"), ("room_b", "B Class")], string="Room", tracking=True)
     active = fields.Boolean(string="Active", default=True, tracking=True)
+    active = fields.Boolean(string="Active", default=True, tracking=True)
+
+
+
