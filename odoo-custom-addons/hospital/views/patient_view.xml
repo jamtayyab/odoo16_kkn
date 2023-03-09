@@ -35,6 +35,11 @@
                     <group expand="0" string = "Group By">
                          <filter name="Room_Class" string="Room Class" context="{'group_by' : 'room'}" />
                     </group>
+
+                    <searchpanel>
+                        <field name="gender" icon="fa-users" select="multi" enable_counters = "1" />
+                        <field name="room" icon="fa-building" select="multi" enable_counters= "1" />
+                    </searchpanel>
             </search>
         </field>
     </record>
@@ -59,6 +64,11 @@
                         </group>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
@@ -68,7 +78,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_Female_filter':1, 'search_default_Room_Class':1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first patient!
