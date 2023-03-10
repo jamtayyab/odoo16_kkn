@@ -31,7 +31,7 @@ class Patient(models.Model):
     def age_calculator(self):
         today = date.today()
         # print("This is the data for self: --->  ",self)
-        for i in self:
+        for i in (self):
             if i.date_of_birth:
                # print("This is the data for i.date_of_birth: --->  ",i.date_of_birth)
                 i .age = today.year - i.date_of_birth.year
