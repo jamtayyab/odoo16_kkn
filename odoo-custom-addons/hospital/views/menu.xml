@@ -14,5 +14,10 @@
               sequence="0"
     />
 
+     <menuitem id="Appointment_Menu"
+              name="Appointment"
+              parent="Hospital_Menu"
+              sequence="4"
+    />
 
 </odoo>
