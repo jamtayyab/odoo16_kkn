@@ -27,8 +27,8 @@
                 <field name="room"/>
                     <field name="active"/>
                 <filter name="Female_filter" string="Female" domain=" [('gender','=','female')]" />
-            <separator/>
-                <filter name="Female_kids" string="kids" domain="[('age','&lt;=',5)]" />
+<!--            <separator/>-->
+<!--                <filter name="Female_kids" string="kids" domain="[('age','&lt;=',5)]" />-->
                      <separator/>
                      <filter name="Filter_Archived" string="Archived" domain="[('active','=',False)]" />
 
@@ -60,6 +60,7 @@
                             <field name="room"/>
                         </group>
                         <group>
+                            <field  name = "date_of_birth" />
                         <field name="active" invisible ='1'/>
                         </group>
                     </group>
